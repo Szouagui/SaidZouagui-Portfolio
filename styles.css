@@ -4,7 +4,9 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body{
   background: #080808;
   color: #fff;
@@ -395,7 +397,7 @@ nav .fa-solid {
     font-size: 40px;
   }
   .about-col-1, .about-col-2{
-     flex-basis: 100%
+     flex-basis: 100%;
   }
   .about-col-1{
     margin-bottom: 30px;
@@ -404,7 +406,20 @@ nav .fa-solid {
     font-size: 14px;
   }
   .tab-links {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    margin: 10px 5px; /* Adjust margin for spacing between links */
+    font-size: 16px; /* Adjust font size for smaller screens */
+    margin: 20px; /* Adjust margin for spacing between links */
   }
+  .contact-left, .contact-right{
+    flex-basis: 100%;
+
+}
+
+/* Other styles that apply for all screen sizes */
+/* ... */
+.contact-left, .contact-right{
+  flex-basis: 100%;
+}
+.copyright{
+  font-size: 14px;
+}
 }
