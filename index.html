@@ -115,7 +115,7 @@
                    <div class="layer">
                      <h3>Boats & Yachts Rentals Website</h3>
                      <p> A web platform developed using Ruby on Rails, JavaScript, HTML, Bootstrap, and SCSS that facilitates boat and yachts rentals for leisure and events.</p>
-                     <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                     <a href="https://github.com/mounapython/floatyourboat"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                    </div>
               </div>
               <div class="work">
@@ -123,7 +123,7 @@
                   <div class="layer">
                     <h3>Freelance platform for Digital Artists </h3>
                     <p> An online marketplace built with Ruby on Rails, JavaScript, HTML, Bootstrap, and SCSS where digital artists and musicians can discover gigs and clients can hire creative talent.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://github.com/Szouagui/sideQuest"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                   </div>
               </div>
               <div class="work">
@@ -131,7 +131,7 @@
                 <div class="layer">
                 <h3>React To Do List</h3>
                 <p>A simple React Application that helps you manage your tasks efficiently.</p>
-                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/Szouagui/React-Todo-list"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               </div>
           </div>
@@ -145,7 +145,10 @@
             <div class="row">
               <div class="contact-left">
                  <h1 class="sub-title">Contact Me</h1>
-                 <p><i class="fa-solid fa-paper-plane"></i>contact@saidzouagui@gmail.com</p>
+                 <a href="mailto:contact@saidzouagui@gmail.com">
+                  <p><i class="fa-solid fa-paper-plane"></i>contact@saidzouagui@gmail.com</p>
+                </a>
+
                  <div class="social-icons">
                      <a href="https://www.linkedin.com/in/said-zouagui-3ba637142/"><i class="fa-brands fa-linkedin"></i></a>
                      <a href="https://twitter.com/said_zouagui"><i class="fa-brands fa-twitter"></i></a>
@@ -161,7 +164,7 @@
                    <button type="submit" class="btn btn2">Submit</button>
 
                  </form>
-
+                   <span id="msg"></span>
               </div>
             </div>
           </div>
@@ -202,11 +205,18 @@ function opentab(tabname) {
    <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbw6k8cQEIZ_C2ZJ6vxP_OHJ6Zl93R9hON3MNKykN6qxRRbC0ES3WAJe8AahSeCI0AimhQ/exec'
     const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("")
 
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
+        .then(response => {
+          msg.innerHTML = "Message sent successfully"
+          setTimeout(function(){
+            msg.innerHTML = " "
+          },5000)
+          form.reset()
+        })
         .catch(error => console.error('Error!', error.message))
     })
   </script>
